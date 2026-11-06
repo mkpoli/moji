@@ -22,8 +22,8 @@
 .chevron { width: .625em; height: .625em; flex: none; opacity: .6; pointer-events: none; transition: transform .12s ease; }
 :host([open]) .chevron { transform: rotate(180deg); }
 [popover] {
-  position: fixed; inset: auto; margin: 0; padding: .375rem;
-  width: min(19rem, calc(100vw - 1rem)); max-height: min(75vh, 34rem); overflow: auto;
+  position: fixed; inset: auto; margin: 0; padding: .375rem; box-sizing: border-box;
+  width: min(19rem, calc(100vw - 16px)); max-height: min(75vh, 34rem); overflow: auto;
   background: Canvas; color: CanvasText;
   border: 1px solid color-mix(in srgb, CanvasText 18%, transparent); border-radius: .5rem;
   box-shadow: 0 .5rem 1.75rem color-mix(in srgb, CanvasText 18%, transparent);
