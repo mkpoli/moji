@@ -17,4 +17,6 @@ for (const locale of LOCALES) {
 writeFileSync(join(dist, '404.html'), renderNotFound())
 
 const switcher = readFileSync(join(root, 'src/switcher.js'), 'utf8')
-writeFileSync(join(dist, 'switcher.js'), switcher.replace('/*DATA*/ null', JSON.stringify(switcherData())))
+// ASCII only, since a script loaded across sites decodes as its page does.
+const ascii = (json: string) => json.replace(/[^\x00-\x7f]/g, (c) => '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0'))
+writeFileSync(join(dist, 'switcher.js'), switcher.replace('/*DATA*/ null', () => ascii(JSON.stringify(switcherData()))))

@@ -71,6 +71,7 @@ describe('switcher', () => {
   test('has a way to the gallery in every language', () => {
     for (const { key, path } of LOCALES) {
       expect(data.more[key]).toBeTruthy()
+      expect(data.label[key]).toBeTruthy()
       expect(data.gallery[key]).toBe('https://scripts.mkpo.li' + path)
     }
   })

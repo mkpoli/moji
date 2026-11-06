@@ -49,5 +49,6 @@
   "work.writing-fails": "收集因書寫方向、排版或翻譯而產生意外讀法的圖例。",
   "work.kanbun-req": "參照W3C《日文排版需求》體例撰寫，說明帶有訓讀標記的漢文排版需求。",
   "work.hundouk": "用於漢文訓讀排版的Typst套件。",
-  "site.more": "查看所有文字專案"
+  "site.more": "查看所有文字專案",
+  "site.switch": "文字網站"
 }

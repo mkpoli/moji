@@ -255,6 +255,7 @@ export function switcherData() {
         .filter((w) => w.href && w.shot)
         .map((w) => ({ id: w.id, name: w.name, href: w.href })),
     })).filter((g) => g.sites.length),
+    label: each((t) => t['site.switch']!),
     more: each((t) => t['site.more']!),
     gallery: Object.fromEntries(LOCALES.map((l) => [l.key, ORIGIN + l.path])),
   }
