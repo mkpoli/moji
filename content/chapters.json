@@ -4,7 +4,7 @@
   {"id":"jurchen","code":"U+18E01","font":"Alari Xuwasun Jurchen","source":"https://www.unicode.org/Public/18.0.0/ucd/JurchenSources.txt","accent":["#0a6c74","#5cc9d0"],"works":[
     {"id":"jurchen-input","name":"Jurchen Input","href":"https://jurchen.mkpo.li/","shot":"jurchen","night":true}]},
   {"id":"han","code":"U+5B57","font":"GenZui Serif","accent":["#1f4e79","#7fb2e0"],"works":[
-    {"id":"han-input","name":"Han Input","shot":"han","night":true},
+    {"id":"han-input","name":"Han Input","href":"https://han.mkpo.li/","shot":"han","night":true},
     {"id":"han-compose","name":"han-compose","href":"https://github.com/mkpoli/han-compose","drawn":"⿰亻哥"},
     {"id":"han-reassemble","name":"漢字組直しクイズ","lang":"ja","href":"https://han-reasm.mkpo.li/","shot":"reasm"}]},
   {"id":"hangul","code":"U+110A U+119E","font":"나눔명조 옛한글","accent":["#2a3f94","#9db0ff"],"works":[

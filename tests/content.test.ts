@@ -41,8 +41,8 @@ describe('works', () => {
     }
   })
 
-  test('a work without a picture has an address to show', () => {
-    for (const w of works.filter((w) => !w.shot && !w.drawn)) expect(w.href).toBeDefined()
+  test('every work has an address', () => {
+    for (const w of works) expect(w.href).toStartWith('https://')
   })
 })
 
@@ -51,7 +51,7 @@ describe('pages', () => {
     test(`${key} links every public work and leaves no placeholder`, () => {
       const html = renderPage(key)
       expect(html).toContain(`<html lang="${key}">`)
-      for (const w of works) if (w.href) expect(html).toContain(`href="${w.href}"`)
+      for (const w of works) expect(html).toContain(`href="${w.href}"`)
       expect(html).not.toContain('{name}')
     })
   }
