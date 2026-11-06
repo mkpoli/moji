@@ -25,12 +25,9 @@ SPECIMENS = {
     "hangul": ("ᄊᆞ", "Korean/old-hangul-note/public/fonts/NanumMyeongjo-YetHangul.woff2"),
     "kana": ("\U0001B127", "Philology/tangut-input/fonts/Kureedo-Regular.woff2"),
     "ainu": ("ㇷ゚", "Philology/tangut-input/fonts/Kureedo-Regular.woff2"),
+    "across": ("字か", "Fonts/genzui/releases/v0.114/GenZuiSerif-Regular.ttf"),
     "layout": ("訓", "Fonts/genzui/releases/v0.114/GenZuiSerif-Regular.ttf"),
 }
-
-
-# Across scripts has no one character to show, so it takes the Glyph Atlas logo.
-LOGOS = {"across": {"viewBox": "4 4 25 25", "d": "M4 4h9v9H4zM19 4h9v9h-9zM4 19h9v9H4zM18 18h11v11H18zM20 20v7h7v-7z"}}
 
 
 def draw(text: str, path: Path) -> dict[str, str]:
@@ -71,7 +68,6 @@ def draw(text: str, path: Path) -> dict[str, str]:
 def main() -> None:
     root = Path(sys.argv[1])
     drawn = {key: draw(text, root / font) for key, (text, font) in SPECIMENS.items()}
-    drawn.update(LOGOS)
     out = Path(__file__).parent.parent / "content/specimens.json"
     out.write_text(json.dumps(drawn, ensure_ascii=False) + "\n")
 

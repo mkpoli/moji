@@ -189,15 +189,14 @@ ${address(work, t)}
 function chapter(c: Chapter, t: Catalogue): string {
   const shown = c.works.filter((w) => w.shot || w.drawn)
   const listed = c.works.filter((w) => !w.shot && !w.drawn)
-  const note = c.source
-    ? `<a href="${c.source}" rel="noopener">${esc(t['note.' + c.id]!)}</a>`
-    : esc(t['note.' + c.id]!)
+  const text = t['note.' + c.id]
+  const note = !text ? '' : c.source ? `<a href="${c.source}" rel="noopener">${esc(text)}</a>` : esc(text)
   return `<section id="${c.id}" class="chapter" style="--a-light:${c.accent[0]};--a-dark:${c.accent[1]}">
 <div class="rail"><div class="rail-inner">
 <div class="glyph">${specimen(c.id)}</div>
 <div>
 <h2 class="chapter-name">${esc(t['chapter.' + c.id]!)}</h2>
-<p class="note">${note}</p>
+${note ? `<p class="note">${note}</p>` : ''}
 ${c.font ? `<p class="meta">${c.code} · ${esc(c.font)}</p>` : ''}
 </div>
 </div></div>

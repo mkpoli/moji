@@ -46,6 +46,5 @@
   "work.writing-fails": "쓰기 방향, 배치, 번역 때문에 의도치 않은 뜻으로 읽히는 사례를 모았습니다.",
   "work.kanbun-req": "W3C의 일본어 조판 요구사항을 본떠 작성한, 훈독 부호가 붙은 한문을 조판하기 위한 요구사항입니다.",
   "work.hundouk": "한문 훈독을 조판하는 Typst 패키지입니다.",
-  "chapter.across": "문자 체계를 넘나들며",
-  "note.across": "가나, 한자, 한글, 구결, 서하 문자"
+  "chapter.across": "문자 체계를 넘나들며"
 }
