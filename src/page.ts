@@ -1,5 +1,6 @@
 // Renders the one page of the site, in one language, as a complete HTML document.
 import chapters from '../content/chapters.json' with { type: 'json' }
+import related from '../content/related.json' with { type: 'json' }
 import specimens from '../content/specimens.json' with { type: 'json' }
 import en from '../messages/en.json' with { type: 'json' }
 import ja from '../messages/ja.json' with { type: 'json' }
@@ -49,6 +50,8 @@ export interface Chapter {
 }
 
 export const CHAPTERS = chapters as Chapter[]
+/** Projects that touch on writing without being one of the sites, so the switcher leaves them out. */
+export const RELATED = related as Work[]
 const SPECIMENS = specimens as Record<string, { viewBox: string; d: string }>
 
 const HOSTS: Record<string, string> = {
@@ -231,6 +234,10 @@ ${bar(locale, t)}
 ${wall}
 </nav>
 ${CHAPTERS.map((c) => chapter(c, t)).join('\n')}
+<section class="related">
+<h2>${esc(t['site.related']!)}</h2>
+<ul class="rows">${RELATED.map((w) => row(w, t)).join('\n')}</ul>
+</section>
 <footer class="colophon">
 <h2>${esc(t['site.colophon']!)}</h2>
 <p>${esc(t['site.fonts']!)} ${esc(fonts)}</p>

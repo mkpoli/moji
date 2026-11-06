@@ -1,10 +1,14 @@
 import { describe, expect, test } from 'bun:test'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'
+<<<<<<< HEAD
 import { CATALOGUES, CHAPTERS, LOCALES, renderPage, switcherData } from '../src/page'
+=======
+import { CATALOGUES, CHAPTERS, LOCALES, RELATED, renderPage } from '../src/page'
+>>>>>>> feat/gallery
 
 const root = join(import.meta.dirname, '..')
-const works = CHAPTERS.flatMap((c) => c.works)
+const works = [...CHAPTERS.flatMap((c) => c.works), ...RELATED]
 
 describe('catalogues', () => {
   const keys = Object.keys(CATALOGUES.en).sort()
@@ -66,6 +70,7 @@ describe('switcher', () => {
     for (const site of sites) expect(site.href).toStartWith('https://')
     expect(sites.map((s) => s.id)).not.toContain('han-input')
     expect(sites.map((s) => s.id)).toContain('jurchen-input')
+    expect(sites.map((s) => s.id)).not.toContain('writing-fails')
   })
 
   test('has a way to the gallery in every language', () => {
