@@ -1,11 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'
-<<<<<<< HEAD
-import { CATALOGUES, CHAPTERS, LOCALES, renderPage, switcherData } from '../src/page'
-=======
-import { CATALOGUES, CHAPTERS, LOCALES, RELATED, renderPage } from '../src/page'
->>>>>>> feat/gallery
+import { CATALOGUES, CHAPTERS, LOCALES, RELATED, renderPage, switcherData } from '../src/page'
 
 const root = join(import.meta.dirname, '..')
 const works = [...CHAPTERS.flatMap((c) => c.works), ...RELATED]
