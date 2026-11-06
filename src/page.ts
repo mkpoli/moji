@@ -33,7 +33,7 @@ export interface Work {
   id: string
   name: string
   lang?: string
-  href?: string
+  href: string
   shot?: string
   night?: boolean
   drawn?: string
@@ -151,10 +151,8 @@ ${LOCALES.map(
 </header>`
 }
 
-function address(work: Work, t: Catalogue): string {
-  return work.href
-    ? `<span class="address">${esc(hostOf(work.href))} <span aria-hidden="true">↗</span></span>`
-    : `<span class="address pending">${esc(t['site.pending']!)}</span>`
+function address(work: Work): string {
+  return `<span class="address">${esc(hostOf(work.href))} <span aria-hidden="true">↗</span></span>`
 }
 
 function card(work: Work, t: Catalogue): string {
@@ -170,11 +168,9 @@ function card(work: Work, t: Catalogue): string {
 <div class="caption">
 <h3 class="work-name"${nameTag(work)}>${esc(work.name)}</h3>
 <p class="desc">${esc(t['work.' + work.id]!)}</p>
-${address(work, t)}
+${address(work)}
 </div>`
-  return work.href
-    ? `<a class="work" href="${work.href}" rel="noopener">${body}</a>`
-    : `<div class="work">${body}</div>`
+  return `<a class="work" href="${work.href}" rel="noopener">${body}</a>`
 }
 
 function row(work: Work, t: Catalogue): string {
@@ -182,7 +178,7 @@ function row(work: Work, t: Catalogue): string {
   return `<li><a class="row" href="${work.href}" rel="noopener">
 <span class="row-name"${nameTag(work)}>${esc(work.name)}</span>
 <span class="row-desc">${esc(t['work.' + work.id]!)}${sample}</span>
-${address(work, t)}
+${address(work)}
 </a></li>`
 }
 
