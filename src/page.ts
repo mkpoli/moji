@@ -41,8 +41,8 @@ export interface Work {
 
 export interface Chapter {
   id: string
-  code: string
-  font: string
+  code?: string
+  font?: string
   source?: string
   accent: string[]
   works: Work[]
@@ -196,7 +196,7 @@ function chapter(c: Chapter, t: Catalogue): string {
 <div>
 <h2 class="chapter-name">${esc(t['chapter.' + c.id]!)}</h2>
 <p class="note">${note}</p>
-<p class="meta">${c.code} · ${esc(c.font)}</p>
+${c.font ? `<p class="meta">${c.code} · ${esc(c.font)}</p>` : ''}
 </div>
 </div></div>
 <div class="body">
@@ -216,7 +216,7 @@ export function renderPage(key: Locale): string {
 <span class="tile-label"><span>${esc(t['chapter.' + c.id]!)}</span><span class="tile-count">${c.works.length}</span></span>
 </a>`,
   ).join('\n')
-  const fonts = [...new Set(CHAPTERS.map((c) => c.font))].join(' · ')
+  const fonts = [...new Set(CHAPTERS.flatMap((c) => c.font ?? []))].join(' · ')
   return `<!doctype html>
 <html lang="${key}">
 ${head(locale, t)}

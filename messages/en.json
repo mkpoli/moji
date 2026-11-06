@@ -40,15 +40,13 @@
   "note.ainu": "small ㇷ with a semi-voiced mark, for final p",
   "work.ainconv": "Converts Ainu words between Latin, katakana and Cyrillic. For JavaScript, Python and Rust.",
   "work.ainukey": "An Ainu input method for Windows: romaji to Ainu katakana. Early beta.",
-  "chapter.munjan": "Sitelen Munjan",
-  "note.munjan": "Toki Pona, written in Sitelen Munjan",
-  "work.munjan": "A Classical-Chinese-styled script for writing Toki Pona with Han characters.",
-  "work.rime-munjan": "A Rime schema for typing Toki Pona in Sitelen Munjan.",
   "chapter.layout": "Layout and direction",
   "note.layout": "the 訓 of 訓読, kanbun kundoku",
   "work.writing-fails": "A gallery of accidental readings caused by writing direction, layout or translation.",
   "work.kanbun-req": "Requirements for laying out annotated kanbun text, written after the W3C's Japanese layout requirements.",
   "work.hundouk": "A Typst package that renders kanbun kundoku.",
+  "chapter.across": "Across scripts",
+  "note.across": "Kana, kanji, Hangul, gugyeol and Tangut",
   "site.more": "All writing-system projects",
   "site.switch": "Writing-system sites"
 }
