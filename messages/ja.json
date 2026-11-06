@@ -47,7 +47,6 @@
   "work.kanbun-req": "W3Cの『日本語組版処理の要件』にならってまとめた、訓点付き漢文の組版要件。",
   "work.hundouk": "漢文訓読を組版するTypstパッケージ。",
   "chapter.across": "文字体系を越えて",
-  "note.across": "仮名・漢字・ハングル・口訣・西夏文字",
   "site.more": "文字のプロジェクトをすべて見る",
   "site.switch": "文字のサイト"
 }

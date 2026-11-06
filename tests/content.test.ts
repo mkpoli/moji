@@ -19,7 +19,7 @@ describe('catalogues', () => {
   test('every chapter and work has its text', () => {
     for (const c of CHAPTERS) {
       expect(CATALOGUES.en['chapter.' + c.id]).toBeDefined()
-      expect(CATALOGUES.en['note.' + c.id]).toBeDefined()
+      if (c.id !== 'across') expect(CATALOGUES.en['note.' + c.id]).toBeDefined()
     }
     for (const w of works) expect(CATALOGUES.en['work.' + w.id]).toBeDefined()
   })

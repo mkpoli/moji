@@ -47,7 +47,6 @@
   "work.kanbun-req": "參照W3C《日文排版需求》體例撰寫，說明帶有訓讀標記的漢文排版需求。",
   "work.hundouk": "用於漢文訓讀排版的Typst套件。",
   "chapter.across": "跨越文字體系",
-  "note.across": "假名、漢字、諺文、口訣與西夏文",
   "site.more": "查看所有文字專案",
   "site.switch": "文字網站"
 }

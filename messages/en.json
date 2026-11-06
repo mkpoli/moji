@@ -47,7 +47,6 @@
   "work.kanbun-req": "Requirements for laying out annotated kanbun text, written after the W3C's Japanese layout requirements.",
   "work.hundouk": "A Typst package that renders kanbun kundoku.",
   "chapter.across": "Across scripts",
-  "note.across": "Kana, kanji, Hangul, gugyeol and Tangut",
   "site.more": "All writing-system projects",
   "site.switch": "Writing-system sites"
 }
