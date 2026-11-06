@@ -101,7 +101,7 @@ document.querySelector('.theme').addEventListener('click', function () {
 document.querySelectorAll('[data-locale]').forEach(function (a) {
   a.addEventListener('click', function () {
     try { localStorage.setItem('scripts:locale', a.dataset.locale); } catch (e) {}
-    a.href += location.hash;
+    a.href = a.pathname + location.hash;
   });
 });
 </script>`
