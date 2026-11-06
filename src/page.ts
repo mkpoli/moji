@@ -50,7 +50,7 @@ export interface Chapter {
 }
 
 export const CHAPTERS = chapters as Chapter[]
-/** Projects that touch on writing without being one of the sites, so the switcher leaves them out. */
+/** Projects that touch on writing, listed apart from the sections by script. */
 export const RELATED = related as Work[]
 const SPECIMENS = specimens as Record<string, { viewBox: string; d: string }>
 
