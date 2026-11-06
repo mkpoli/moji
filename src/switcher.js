@@ -27,7 +27,7 @@
   background: Canvas; color: CanvasText;
   border: 1px solid color-mix(in srgb, CanvasText 18%, transparent); border-radius: .5rem;
   box-shadow: 0 .5rem 1.75rem color-mix(in srgb, CanvasText 18%, transparent);
-  font: 400 .875rem/1.35 system-ui, -apple-system, 'Segoe UI', sans-serif; letter-spacing: normal; text-align: start;
+  font: 400 .875rem/1.35 system-ui, -apple-system, 'Segoe UI', sans-serif; letter-spacing: normal; word-spacing: normal; text-align: start; text-transform: none; text-indent: 0; font-style: normal; white-space: normal;
 }
 .group { padding: .625rem .625rem .25rem; font-size: .75rem; color: color-mix(in srgb, CanvasText 62%, Canvas); }
 a { display: flex; align-items: baseline; justify-content: space-between; gap: .75rem; padding: .4375rem .625rem; border-radius: .3125rem; color: inherit; text-decoration: none; outline: none; }
