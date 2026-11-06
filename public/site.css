@@ -234,6 +234,9 @@ li:last-child .row { border-bottom: 1px solid var(--line); }
 .sample { display: block; margin-top: 0.25rem; color: var(--ink); }
 .row .address { margin-top: 0; white-space: nowrap; }
 
+.related { padding-block: clamp(2.5rem, 6vw, 4.5rem); border-bottom: 1px solid var(--line); }
+.related h2 { margin-bottom: 1rem; font-size: 1.875rem; line-height: 1.2; }
+
 .colophon { padding-block: 2.5rem 3.5rem; color: var(--muted); font-size: 0.8125rem; }
 .colophon h2 { margin-bottom: 0.5rem; color: var(--ink); font-size: 1.125rem; }
 .links { margin-top: 1rem; }

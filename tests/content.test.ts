@@ -1,10 +1,10 @@
 import { describe, expect, test } from 'bun:test'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'
-import { CATALOGUES, CHAPTERS, LOCALES, renderPage } from '../src/page'
+import { CATALOGUES, CHAPTERS, LOCALES, RELATED, renderPage } from '../src/page'
 
 const root = join(import.meta.dirname, '..')
-const works = CHAPTERS.flatMap((c) => c.works)
+const works = [...CHAPTERS.flatMap((c) => c.works), ...RELATED]
 
 describe('catalogues', () => {
   const keys = Object.keys(CATALOGUES.en).sort()

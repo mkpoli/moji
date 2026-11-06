@@ -24,7 +24,6 @@
   {"id":"across","accent":["#5b3fb0","#b3a1f5"],"works":[
     {"id":"glyph-atlas","name":"Glyph Atlas 字形大圖譜","href":"https://glyphatlas.org/","shot":"atlas","night":true}]},
   {"id":"layout","code":"U+8A13","font":"GenZui Serif","accent":["#755610","#d8b45a"],"works":[
-    {"id":"writing-fails","name":"Writing fails","href":"https://writing-fails.mkpo.li/","shot":"fails","night":true},
     {"id":"kanbun-req","name":"訓点漢文組版要件","lang":"ja","href":"https://kanbun-req.mkpo.li/","shot":"kanbun"},
     {"id":"hundouk","name":"hundouk 訓読","href":"https://typst.app/universe/package/hundouk"}]}
 ]
