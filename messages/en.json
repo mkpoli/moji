@@ -48,5 +48,6 @@
   "note.layout": "the 訓 of 訓読, kanbun kundoku",
   "work.writing-fails": "A gallery of accidental readings caused by writing direction, layout or translation.",
   "work.kanbun-req": "Requirements for laying out annotated kanbun text, written after the W3C's Japanese layout requirements.",
-  "work.hundouk": "A Typst package that renders kanbun kundoku."
+  "work.hundouk": "A Typst package that renders kanbun kundoku.",
+  "site.more": "All writing-system projects"
 }

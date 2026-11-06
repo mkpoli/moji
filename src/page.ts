@@ -88,7 +88,8 @@ try {
 } catch (e) {}
 </script>`
 
-const footScript = `<script>
+const footScript = `<script defer src="/switcher.js"></script>
+<script>
 document.querySelector('.theme').addEventListener('click', function () {
   var dark = document.documentElement.dataset.theme
     ? document.documentElement.dataset.theme === 'dark'
@@ -135,7 +136,7 @@ ${headScript(locale.key === 'en')}
 
 function bar(locale: (typeof LOCALES)[number], t: Catalogue): string {
   return `<header class="bar">
-<a class="wordmark" href="${locale.path}">${esc(t['site.title']!)}</a>
+<site-switcher current="gallery"><a class="wordmark" href="${locale.path}">${esc(t['site.title']!)}</a></site-switcher>
 <div class="tools">
 <nav class="langs" aria-label="${esc(t['site.languages']!)}">
 ${LOCALES.map(
@@ -241,6 +242,22 @@ ${footScript}
 </body>
 </html>
 `
+}
+
+/** The sites of the switcher: every work with a site of its own, by script, in each language. */
+export function switcherData() {
+  const each = (pick: (t: Catalogue) => string) =>
+    Object.fromEntries(LOCALES.map((l) => [l.key, pick(CATALOGUES[l.key])]))
+  return {
+    groups: CHAPTERS.map((c) => ({
+      name: each((t) => t['chapter.' + c.id]!),
+      sites: c.works
+        .filter((w) => w.href && w.shot)
+        .map((w) => ({ id: w.id, name: w.name, href: w.href })),
+    })).filter((g) => g.sites.length),
+    more: each((t) => t['site.more']!),
+    gallery: Object.fromEntries(LOCALES.map((l) => [l.key, ORIGIN + l.path])),
+  }
 }
 
 export function renderNotFound(): string {

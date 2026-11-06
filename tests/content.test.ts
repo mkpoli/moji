@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'
-import { CATALOGUES, CHAPTERS, LOCALES, renderPage } from '../src/page'
+import { CATALOGUES, CHAPTERS, LOCALES, renderPage, switcherData } from '../src/page'
 
 const root = join(import.meta.dirname, '..')
 const works = CHAPTERS.flatMap((c) => c.works)
@@ -55,4 +55,23 @@ describe('pages', () => {
       expect(html).not.toContain('{name}')
     })
   }
+})
+
+describe('switcher', () => {
+  const data = switcherData()
+  const sites = data.groups.flatMap((g) => g.sites)
+
+  test('lists each site with an address once, and no site without one', () => {
+    expect(new Set(sites.map((s) => s.id)).size).toBe(sites.length)
+    for (const site of sites) expect(site.href).toStartWith('https://')
+    expect(sites.map((s) => s.id)).not.toContain('han-input')
+    expect(sites.map((s) => s.id)).toContain('jurchen-input')
+  })
+
+  test('has a way to the gallery in every language', () => {
+    for (const { key, path } of LOCALES) {
+      expect(data.more[key]).toBeTruthy()
+      expect(data.gallery[key]).toBe('https://scripts.mkpo.li' + path)
+    }
+  })
 })
