@@ -29,6 +29,10 @@ SPECIMENS = {
 }
 
 
+# Across scripts has no one character to show, so it takes the Glyph Atlas logo.
+LOGOS = {"across": {"viewBox": "4 4 25 25", "d": "M4 4h9v9H4zM19 4h9v9h-9zM4 19h9v9H4zM18 18h11v11H18zM20 20v7h7v-7z"}}
+
+
 def draw(text: str, path: Path) -> dict[str, str]:
     font = TTFont(path)
     buffer = io.BytesIO()
@@ -67,6 +71,7 @@ def draw(text: str, path: Path) -> dict[str, str]:
 def main() -> None:
     root = Path(sys.argv[1])
     drawn = {key: draw(text, root / font) for key, (text, font) in SPECIMENS.items()}
+    drawn.update(LOGOS)
     out = Path(__file__).parent.parent / "content/specimens.json"
     out.write_text(json.dumps(drawn, ensure_ascii=False) + "\n")
 

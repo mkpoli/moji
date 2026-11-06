@@ -44,5 +44,7 @@
   "note.layout": "“训读”的“训”",
   "work.writing-fails": "汇集因书写方向、排版或翻译而产生意外读法的实例。",
   "work.kanbun-req": "参照W3C《日文排版需求》编写的带训点汉文排版需求。",
-  "work.hundouk": "用于汉文训读排版的Typst包。"
+  "work.hundouk": "用于汉文训读排版的Typst包。",
+  "chapter.across": "跨越文字体系",
+  "note.across": "假名、汉字、谚文、口诀和西夏文"
 }
