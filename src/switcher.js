@@ -4,7 +4,8 @@
 //   <script defer src="https://scripts.mkpo.li/switcher.js"></script>
 //
 // Until this script runs, or if it never does, the logo stays a plain link home. Colours follow the
-// page's `color-scheme`; a page can set --site-switcher-accent. The list is filled in at build time.
+// page's `color-scheme`; a page can set --site-switcher-accent. Sizes are in px, so that a page's root
+// font size leaves the menu as it is. The list is filled in at build time.
 ;(() => {
   const DATA = /*DATA*/ null
   if (customElements.get('site-switcher')) return
@@ -22,19 +23,19 @@
 .chevron { width: .625em; height: .625em; flex: none; opacity: .6; pointer-events: none; transition: transform .12s ease; }
 :host([open]) .chevron { transform: rotate(180deg); }
 [popover] {
-  position: fixed; inset: auto; margin: 0; padding: .375rem; box-sizing: border-box;
-  width: min(19rem, calc(100vw - 16px)); max-height: min(75vh, 34rem); overflow: auto;
+  position: fixed; inset: auto; margin: 0; padding: 6px; box-sizing: border-box;
+  width: min(304px, calc(100vw - 16px)); max-height: min(75vh, 544px); overflow: auto;
   background: Canvas; color: CanvasText;
-  border: 1px solid color-mix(in srgb, CanvasText 18%, transparent); border-radius: .5rem;
-  box-shadow: 0 .5rem 1.75rem color-mix(in srgb, CanvasText 18%, transparent);
-  font: 400 .875rem/1.35 system-ui, -apple-system, 'Segoe UI', sans-serif; letter-spacing: normal; word-spacing: normal; text-align: start; text-transform: none; text-indent: 0; font-style: normal; white-space: normal;
+  border: 1px solid color-mix(in srgb, CanvasText 18%, transparent); border-radius: 8px;
+  box-shadow: 0 8px 28px color-mix(in srgb, CanvasText 18%, transparent);
+  font: 400 14px/1.35 system-ui, -apple-system, 'Segoe UI', sans-serif; letter-spacing: normal; word-spacing: normal; text-align: start; text-transform: none; text-indent: 0; font-style: normal; white-space: normal;
 }
-.group { padding: .625rem .625rem .25rem; font-size: .75rem; color: color-mix(in srgb, CanvasText 62%, Canvas); }
-a { display: flex; align-items: baseline; justify-content: space-between; gap: .75rem; padding: .4375rem .625rem; border-radius: .3125rem; color: inherit; text-decoration: none; outline: none; }
+.group { padding: 10px 10px 4px; font-size: 12px; color: color-mix(in srgb, CanvasText 62%, Canvas); }
+a { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 7px 10px; border-radius: 5px; color: inherit; text-decoration: none; outline: none; }
 a:hover, a:focus-visible { background: color-mix(in srgb, CanvasText 9%, transparent); }
 a[aria-current] { color: var(--site-switcher-accent, inherit); font-weight: 600; }
 a[aria-current]::after { content: '✓'; }
-.more { margin-top: .375rem; border-top: 1px solid color-mix(in srgb, CanvasText 14%, transparent); padding-top: .375rem; }
+.more { margin-top: 6px; border-top: 1px solid color-mix(in srgb, CanvasText 14%, transparent); padding-top: 6px; }
 @media (prefers-reduced-motion: reduce) { .chevron { transition: none; } }`
 
   class SiteSwitcher extends HTMLElement {
