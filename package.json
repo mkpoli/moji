@@ -1,11 +1,11 @@
 {
-  "name": "scripts-gallery",
+  "name": "moji",
   "version": "0.1.0",
   "private": true,
   "description": "A feature site that gathers writing-system projects: input methods, fonts, datasets and tools.",
   "license": "MIT",
   "author": "mkpoli",
-  "homepage": "https://scripts.mkpo.li/",
+  "homepage": "https://moji.mkpo.li/",
   "type": "module",
   "scripts": {
     "build": "bun scripts/build.ts",

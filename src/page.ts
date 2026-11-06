@@ -8,7 +8,7 @@ import ko from '../messages/ko.json' with { type: 'json' }
 import zhHans from '../messages/zh-Hans.json' with { type: 'json' }
 import zhHant from '../messages/zh-Hant.json' with { type: 'json' }
 
-export const ORIGIN = 'https://scripts.mkpo.li'
+export const ORIGIN = 'https://moji.mkpo.li'
 
 export const LOCALES = [
   { key: 'en', short: 'EN', name: 'English', path: '/' },
@@ -79,12 +79,12 @@ const nameTag = (work: Work) => (work.lang ? ` lang="${work.lang}"` : '')
 /** The theme applies before first paint, and the first visit to the root follows the browser. */
 const headScript = (root: boolean) => `<script>
 try {
-  var t = localStorage.getItem('scripts:theme');
+  var t = localStorage.getItem('moji:theme');
   if (t) document.documentElement.dataset.theme = t;${
     root
       ? `
   var n = navigator.language.toLowerCase();
-  var l = localStorage.getItem('scripts:locale') || (n.startsWith('ja') ? 'ja' : n.startsWith('ko') ? 'ko' : n.startsWith('zh') ? (/hant|tw|hk|mo/.test(n) ? 'zh-Hant' : 'zh-Hans') : 'en');
+  var l = localStorage.getItem('moji:locale') || (n.startsWith('ja') ? 'ja' : n.startsWith('ko') ? 'ko' : n.startsWith('zh') ? (/hant|tw|hk|mo/.test(n) ? 'zh-Hant' : 'zh-Hans') : 'en');
   if (l !== 'en') location.replace('/' + l + '/' + location.hash);`
       : ''
   }
@@ -98,11 +98,11 @@ document.querySelector('.theme').addEventListener('click', function () {
     : matchMedia('(prefers-color-scheme: dark)').matches;
   var next = dark ? 'light' : 'dark';
   document.documentElement.dataset.theme = next;
-  try { localStorage.setItem('scripts:theme', next); } catch (e) {}
+  try { localStorage.setItem('moji:theme', next); } catch (e) {}
 });
 document.querySelectorAll('[data-locale]').forEach(function (a) {
   a.addEventListener('click', function () {
-    try { localStorage.setItem('scripts:locale', a.dataset.locale); } catch (e) {}
+    try { localStorage.setItem('moji:locale', a.dataset.locale); } catch (e) {}
     a.href = a.pathname + location.hash;
   });
 });
@@ -240,7 +240,7 @@ ${CHAPTERS.map((c) => chapter(c, t)).join('\n')}
 <h2>${esc(t['site.colophon']!)}</h2>
 <p>${esc(t['site.fonts']!)} ${esc(fonts)}</p>
 <p>${esc(t['site.shots']!)}</p>
-<p class="links"><a href="https://mkpo.li/">mkpoli</a> · <a href="https://github.com/mkpoli/scripts-gallery">${esc(t['site.source']!)}</a> · <a href="https://ko-fi.com/mkpoli">Ko-fi</a></p>
+<p class="links"><a href="https://mkpo.li/">mkpoli</a> · <a href="https://github.com/mkpoli/moji">${esc(t['site.source']!)}</a> · <a href="https://ko-fi.com/mkpoli">Ko-fi</a></p>
 </footer>
 </main>
 ${footScript}

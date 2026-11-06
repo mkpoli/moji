@@ -1,6 +1,6 @@
 # Writing Systems · 文字專題
 
-A feature site that gathers writing-system projects by script: input methods, fonts, datasets and tools. <https://scripts.mkpo.li/>
+A feature site that gathers writing-system projects by script: input methods, fonts, datasets and tools. <https://moji.mkpo.li/>
 
 ## Develop
 
