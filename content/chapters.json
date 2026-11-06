@@ -22,9 +22,6 @@
   {"id":"ainu","code":"U+31F7 U+309A","font":"Kureedo","accent":["#7d2c5e","#e39ac6"],"works":[
     {"id":"ainconv","name":"ainconv","href":"https://www.npmjs.com/package/ainconv","sample":"aynu → アイヌ · айну"},
     {"id":"ainukey","name":"ainuKey","href":"https://github.com/mkpoli/ainuKey"}]},
-  {"id":"munjan","code":"U+8A00 U+5584","font":"GenZui Serif","source":"https://github.com/mkpoli/rime-toki-pona-munjan","accent":["#00597a","#5ac8e8"],"works":[
-    {"id":"munjan","name":"書文言 sitelen munjan","href":"https://munjan.mkpo.li/","shot":"munjan"},
-    {"id":"rime-munjan","name":"rime-toki-pona-munjan","href":"https://github.com/mkpoli/rime-toki-pona-munjan"}]},
   {"id":"layout","code":"U+8A13","font":"GenZui Serif","accent":["#755610","#d8b45a"],"works":[
     {"id":"writing-fails","name":"Writing fails","href":"https://writing-fails.mkpo.li/","shot":"fails","night":true},
     {"id":"kanbun-req","name":"訓点漢文組版要件","lang":"ja","href":"https://kanbun-req.mkpo.li/","shot":"kanbun"},

@@ -25,7 +25,6 @@ SPECIMENS = {
     "hangul": ("ᄊᆞ", "Korean/old-hangul-note/public/fonts/NanumMyeongjo-YetHangul.woff2"),
     "kana": ("\U0001B127", "Philology/tangut-input/fonts/Kureedo-Regular.woff2"),
     "ainu": ("ㇷ゚", "Philology/tangut-input/fonts/Kureedo-Regular.woff2"),
-    "munjan": ("言善", "Fonts/genzui/releases/v0.114/GenZuiSerif-Regular.ttf"),
     "layout": ("訓", "Fonts/genzui/releases/v0.114/GenZuiSerif-Regular.ttf"),
 }
 
