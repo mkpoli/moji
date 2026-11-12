@@ -21,6 +21,7 @@ from fontTools.ttLib import TTFont
 SPECIMENS = {
     "tangut": ("\U00018164", "Philology/tangut-input/app/public/fonts/NotoSerifTangut-Regular.woff2"),
     "jurchen": ("\U00018E01", "Philology/jurchen-input/app/public/fonts/AlariXuwasunJurchen-Regular.woff2"),
+    "khitan": ("\U00018B67", "Philology/khitan-input/app/public/fonts/NotoSerifKhitanSmallScript-Regular.woff2"),
     "han": ("字", "Fonts/genzui/releases/v0.114/GenZuiSerif-Regular.ttf"),
     "hangul": ("ᄊᆞ", "Korean/old-hangul-note/public/fonts/NanumMyeongjo-YetHangul.woff2"),
     "kana": ("\U0001B127", "Philology/tangut-input/fonts/Kureedo-Regular.woff2"),
