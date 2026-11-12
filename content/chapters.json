@@ -3,6 +3,8 @@
     {"id":"tangut-input","name":"Tangut Input","href":"https://tangut.mkpo.li/","shot":"tangut","night":true}]},
   {"id":"jurchen","code":"U+18E01","font":"Alari Xuwasun Jurchen","source":"https://www.unicode.org/Public/18.0.0/ucd/JurchenSources.txt","accent":["#0a6c74","#5cc9d0"],"works":[
     {"id":"jurchen-input","name":"Jurchen Input","href":"https://jurchen.mkpo.li/","shot":"jurchen","night":true}]},
+  {"id":"khitan","code":"U+18B67","font":"Noto Serif Khitan Small Script","source":"https://hdl.handle.net/2433/253009","accent":["#566b0f","#b4cf5a"],"works":[
+    {"id":"khitan-input","name":"Khitan Input","href":"https://khitan.mkpo.li/","shot":"khitan","night":true}]},
   {"id":"han","code":"U+5B57","font":"GenZui Serif","accent":["#1f4e79","#7fb2e0"],"works":[
     {"id":"han-input","name":"Han Input","href":"https://han.mkpo.li/","shot":"han","night":true},
     {"id":"han-compose","name":"han-compose","href":"https://github.com/mkpoli/han-compose","drawn":"⿰亻哥"},
