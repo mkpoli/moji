@@ -259,3 +259,23 @@ ${footScript}
 </html>
 `
 }
+
+export function renderSitemap(): string {
+  const alternates = [
+    ...LOCALES.map((l) => ({ lang: l.key as string, href: ORIGIN + l.path })),
+    { lang: 'x-default', href: ORIGIN + '/' },
+  ]
+  const links = alternates
+    .map((a) => `    <xhtml:link rel="alternate" hreflang="${a.lang}" href="${a.href}"/>`)
+    .join('\n')
+  const urls = LOCALES.map((l) => `  <url>\n    <loc>${ORIGIN + l.path}</loc>\n${links}\n  </url>`).join('\n')
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urls}
+</urlset>
+`
+}
+
+export function renderRobots(): string {
+  return `User-agent: *\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`
+}
