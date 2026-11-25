@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'
-import { CATALOGUES, CHAPTERS, LOCALES, RELATED, renderPage } from '../src/page'
+import { CATALOGUES, CHAPTERS, LOCALES, ORIGIN, RELATED, renderPage, renderRobots, renderSitemap } from '../src/page'
 
 const root = join(import.meta.dirname, '..')
 const works = [...CHAPTERS.flatMap((c) => c.works), ...RELATED]
@@ -55,4 +55,27 @@ describe('pages', () => {
       expect(html).not.toContain('{name}')
     })
   }
+})
+
+describe('sitemap and robots', () => {
+  const hreflangs = (html: string) =>
+    [...html.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"/g)].map((m) => `${m[1]} ${m[2]}`)
+
+  test('the sitemap lists every page with the hreflang set of its head', () => {
+    const xml = renderSitemap()
+    const blocks = xml.split('<url>').slice(1)
+    expect(blocks.length).toBe(LOCALES.length)
+    for (const [i, { key, path }] of LOCALES.entries()) {
+      const block = blocks[i]!
+      expect(block).toContain(`<loc>${ORIGIN}${path}</loc>`)
+      const sitemapSet = [...block.matchAll(/hreflang="([^"]+)" href="([^"]+)"/g)].map((m) => `${m[1]} ${m[2]}`)
+      expect(sitemapSet).toEqual(hreflangs(renderPage(key)))
+    }
+  })
+
+  test('robots.txt allows everything and names the sitemap', () => {
+    const txt = renderRobots()
+    expect(txt).toContain('User-agent: *\nAllow: /')
+    expect(txt).toContain(`Sitemap: ${ORIGIN}/sitemap.xml`)
+  })
 })
